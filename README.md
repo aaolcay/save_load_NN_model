@@ -10,8 +10,10 @@ with open("model.json", "w") as json_file:
 ### serialize weights to HDF5
 model.save_weights("model.h5")
 print("Saved model to disk")
+
 **Once you have saved your model in the current folder, you can load it in any location by 
   specifying the path to the directory where you saved it.**
+
 ## Load:
 ### load json and create model
 json_file = open('model.json', 'r')
