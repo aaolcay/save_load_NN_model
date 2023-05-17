@@ -1,6 +1,6 @@
 # How to Save and Load a Model Explained
 **Reference: https://machinelearningmastery.com/save-load-keras-deep-learning-models/**
-# ------------------------------------- save -------------------------------------------- #
+### ------------------------------------- save --------------------------------------------
 ## Import Libraries
 from tensorflow.keras.models import model_from_json
 ## serialize model to JSON
@@ -12,7 +12,7 @@ model.save_weights("model.h5")
 print("Saved model to disk")
 **Once you have saved your model in the current folder, you can load it in any location by 
   specifying the path to the directory where you saved it.**
-# ------------------------------------- load -------------------------------------------- #
+### ------------------------------------- load --------------------------------------------
 # load json and create model
 json_file = open('model.json', 'r')
 loaded_model_json = json_file.read()
@@ -21,7 +21,7 @@ loaded_model = model_from_json(loaded_model_json)
 # load weights into new model
 loaded_model.load_weights("model.h5")
 print("Loaded model from disk") 
-# ----------------------- evaluate your model on your data ------------------------------ #
+### ----------------------- evaluate your model on your data ------------------------------
 # evaluate loaded model on test data
 loaded_model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
 score = loaded_model.evaluate(X, Y, verbose=0)
